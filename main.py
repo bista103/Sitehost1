@@ -1,36 +1,23 @@
 from flask import Flask, request, redirect, render_template_string
-import time
 import logging
 from datetime import datetime
 
 app = Flask(__name__)
 
 # === Config ===
-REDIRECT_AFTER_SECONDS = 5
+REDIRECT_AFTER_SECONDS = 30
 LOG_FILE = "visitor_log.txt"
 
-@app.route("/")
-def monetag_verify():
-    return """
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
-        <title>MyClicks Store</title>
-      </head>
-      <body>
-        <h1>Verification in progress...</h1>
-      </body>
-    </html>
-    """
-
-# === Ad Placeholder (Replace with real ad code later) ===
+# === Ad Code Injection ===
 ad_html = """
-<div style='width: 100%; padding: 20px; text-align: center; background: #f9f9f9;'>
-  <h3>Advertisement</h3>
-  <p>This is a placeholder. Insert your ad network script here.</p>
-</div>
+<!-- Bright Tag -->
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9233249,document.createElement('script'))</script>
+
+<!-- Positive Tag -->
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233225,document.body||document.documentElement)</script>
+
+<!-- Optional: PropellerAds Push Script -->
+<script data-cfasync="false" type="text/javascript" src="https://upgulpinon.com/1?z=6027370"></script>
 """
 
 # === Landing Page Template ===
@@ -39,18 +26,21 @@ page_template = """
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="{{ delay }};url={{ target }}">
-  <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
   <title>Redirecting...</title>
+  <script type="text/javascript">
+    setTimeout(function() {
+      window.location.href = "{{ target }}";
+    }, {{ delay * 1000 }}); // Delay in milliseconds
+  </script>
 </head>
 <body>
   {{ ad_code|safe }}
-  <p style="text-align:center;margin-top:20px;">You will be redirected in {{ delay }} seconds...</p>
+  <p style="text-align:center;margin-top:20px;">
+    Please wait... You will be redirected in {{ delay }} seconds.
+  </p>
 </body>
 </html>
 """
-
-
 
 # === Logger ===
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO)
@@ -64,10 +54,14 @@ def redirect_view():
     ref = request.headers.get('Referer', 'Direct')
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Log the visit
     logging.info(f"{now} | IP: {ip} | UA: {ua} | From: {ref} => {target}")
 
-    return render_template_string(page_template, delay=REDIRECT_AFTER_SECONDS, target=target, ad_code=ad_html)
+    return render_template_string(
+        page_template,
+        delay=REDIRECT_AFTER_SECONDS,
+        target=target,
+        ad_code=ad_html
+    )
 
 # === Run App ===
 if __name__ == '__main__':
