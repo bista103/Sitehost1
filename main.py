@@ -15,6 +15,21 @@ ad_scripts = """
 
 <!-- Positive Tag -->
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233225,document.body||document.documentElement)</script>
+
+<!-- Multi Tag -->
+<script src="https://kulroakonsu.net/88/tag.min.js" data-zone="143201" async data-cfasync="false"></script>
+
+<!-- OnClick Tags -->
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233373,document.body||document.documentElement)</script>
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233373,document.body||document.documentElement)</script>
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233412,document.body||document.documentElement)</script>
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233412,document.body||document.documentElement)</script>
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',9233430,document.body||document.documentElement)</script>
+
+<!-- Interstitial Tags -->
+<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9233436,document.createElement('script'))</script>
+<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9233439,document.createElement('script'))</script>
+<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9233441,document.createElement('script'))</script>
 """
 
 # === Home Page ===
