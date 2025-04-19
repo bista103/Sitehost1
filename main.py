@@ -24,6 +24,7 @@ page_template = """
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="{{ delay }};url={{ target }}">
+  <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
   <title>Redirecting...</title>
 </head>
 <body>
@@ -32,6 +33,8 @@ page_template = """
 </body>
 </html>
 """
+
+
 
 # === Logger ===
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO)
