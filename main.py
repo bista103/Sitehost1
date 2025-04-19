@@ -31,6 +31,16 @@ ad_scripts = """
     document.removeEventListener('click', arguments.callee);
   });
 </script>
+
+<!-- In-Page Push Notifications -->
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9233249,document.createElement('script'))</script>
+<script src="https://pertawee.net/act/files/tag.min.js?z=9234637" data-cfasync="false" async></script>
+<script src="https://vaugroar.com/act/files/tag.min.js?z=9234641" data-cfasync="false" async></script>
+
+<!-- Banner Scripts -->
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234643,document.createElement('script'))</script>
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234647,document.createElement('script'))</script>
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234650,document.createElement('script'))</script>
 """
 
 # === Home Page ===
@@ -89,3 +99,4 @@ def redirect_view():
 # === Run App ===
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
