@@ -9,6 +9,22 @@ app = Flask(__name__)
 REDIRECT_AFTER_SECONDS = 5
 LOG_FILE = "visitor_log.txt"
 
+@app.route("/")
+def monetag_verify():
+    return """
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
+        <title>MyClicks Store</title>
+      </head>
+      <body>
+        <h1>Verification in progress...</h1>
+      </body>
+    </html>
+    """
+
 # === Ad Placeholder (Replace with real ad code later) ===
 ad_html = """
 <div style='width: 100%; padding: 20px; text-align: center; background: #f9f9f9;'>
