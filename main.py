@@ -8,39 +8,22 @@ app = Flask(__name__)
 REDIRECT_AFTER_SECONDS = 30
 LOG_FILE = "visitor_log.txt"
 
-# === OnClick Ad Scripts with Priority Logic ===
+# === New Ad Scripts ===
 ad_scripts = """
-<!-- OnClick Ads with Chaining -->
-<script>
-  function loadAd(zoneId) {
-    const script = document.createElement('script');
-    script.src = 'https://shebudriftaiter.net/tag.min.js';
-    script.setAttribute('data-zone', zoneId);
-    (document.body || document.documentElement).appendChild(script);
-  }
-
-  // Load first ad
-  loadAd(9233373);
-
-  // Setup ad chaining after user interaction
-  document.addEventListener('click', () => {
-    setTimeout(() => {
-      loadAd(9233412);
-    }, 1000); // 1s delay after first interaction
-
-    document.removeEventListener('click', arguments.callee);
-  });
+<!-- Banner Ad -->
+<script type=\"text/javascript\">
+\tatOptions = {
+\t\t'key' : '9169a46ee81b0140c7551d9cd809ca0c',
+\t\t'format' : 'iframe',
+\t\t'height' : 90,
+\t\t'width' : 728,
+\t\t'params' : {}
+\t};
 </script>
+<script type=\"text/javascript\" src=\"//www.highperformanceformat.com/9169a46ee81b0140c7551d9cd809ca0c/invoke.js\"></script>
 
-<!-- In-Page Push Notifications -->
-<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9233249,document.createElement('script'))</script>
-<script src="https://pertawee.net/act/files/tag.min.js?z=9234637" data-cfasync="false" async></script>
-<script src="https://vaugroar.com/act/files/tag.min.js?z=9234641" data-cfasync="false" async></script>
-
-<!-- Banner Scripts -->
-<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234643,document.createElement('script'))</script>
-<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234647,document.createElement('script'))</script>
-<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9234650,document.createElement('script'))</script>
+<!-- Social Bar Ad -->
+<script type='text/javascript' src='//pl26427786.profitableratecpm.com/53/4d/3c/534d3c4331b30b66cd259fbb1e426246.js'></script>
 """
 
 # === Home Page ===
@@ -50,8 +33,8 @@ def home():
     <!DOCTYPE html>
     <html>
       <head>
-        <meta charset="UTF-8">
-        <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
+        <meta charset=\"UTF-8\">
+        <meta name=\"monetag\" content=\"28d87cfad14ca2c792a76293e20949f6\">
         <title>MyClicks Store</title>
       </head>
       <body>
@@ -65,16 +48,16 @@ def home():
 # === Redirect Page Template ===
 page_template = """
 <!DOCTYPE html>
-<html lang="en">
+<html lang=\"en\">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="{{ delay }};url={{ target }}">
-  <meta name="monetag" content="28d87cfad14ca2c792a76293e20949f6">
+  <meta charset=\"UTF-8\">
+  <meta http-equiv=\"refresh\" content=\"{{ delay }};url={{ target }}\">
+  <meta name=\"monetag\" content=\"28d87cfad14ca2c792a76293e20949f6\">
   <title>Redirecting...</title>
 </head>
 <body>
   {{ ad_code|safe }}
-  <p style="text-align:center;margin-top:20px;">You will be redirected in {{ delay }} seconds...</p>
+  <p style=\"text-align:center;margin-top:20px;\">You will be redirected in {{ delay }} seconds...</p>
 </body>
 </html>
 """
