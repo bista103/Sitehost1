@@ -24,6 +24,10 @@ ad_scripts = """
 
 <!-- Social Bar Ad -->
 <script type='text/javascript' src='//pl26427786.profitableratecpm.com/53/4d/3c/534d3c4331b30b66cd259fbb1e426246.js'></script>
+
+<!-- Additional Ad Unit -->
+<script async=\"async\" data-cfasync=\"false\" src=\"//pl26427849.profitableratecpm.com/32303644a088d2160e9900739bf884b8/invoke.js\"></script>
+<div id=\"container-32303644a088d2160e9900739bf884b8\"></div>
 """
 
 # === Home Page ===
