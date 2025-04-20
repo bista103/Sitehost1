@@ -8,26 +8,12 @@ app = Flask(__name__)
 REDIRECT_AFTER_SECONDS = 30
 LOG_FILE = "visitor_log.txt"
 
-# === New Ad Scripts ===
+# === Meta Verification + Placeholder Ad ===
 ad_scripts = """
-<!-- Banner Ad -->
-<script type=\"text/javascript\">
-\tatOptions = {
-\t\t'key' : '9169a46ee81b0140c7551d9cd809ca0c',
-\t\t'format' : 'iframe',
-\t\t'height' : 90,
-\t\t'width' : 728,
-\t\t'params' : {}
-\t};
-</script>
-<script type=\"text/javascript\" src=\"//www.highperformanceformat.com/9169a46ee81b0140c7551d9cd809ca0c/invoke.js\"></script>
-
-<!-- Social Bar Ad -->
-<script type='text/javascript' src='//pl26427786.profitableratecpm.com/53/4d/3c/534d3c4331b30b66cd259fbb1e426246.js'></script>
-
-<!-- Additional Ad Unit -->
-<script async=\"async\" data-cfasync=\"false\" src=\"//pl26427849.profitableratecpm.com/32303644a088d2160e9900739bf884b8/invoke.js\"></script>
-<div id=\"container-32303644a088d2160e9900739bf884b8\"></div>
+<!-- mylead-verification: 1d7532e80fc65619c5daea33fedc81db -->
+<a href="https://your-cpa-offer-link.com" id="fake-ad" target="_blank">
+  <img src="/static/banner.jpg" width="728" height="90" alt="Win an Amazon Gift Card">
+</a>
 """
 
 # === Home Page ===
@@ -37,8 +23,8 @@ def home():
     <!DOCTYPE html>
     <html>
       <head>
-        <meta charset=\"UTF-8\">
-        <meta name=\"monetag\" content=\"28d87cfad14ca2c792a76293e20949f6\">
+        <meta charset="UTF-8">
+        <meta name="mylead-verification" content="1d7532e80fc65619c5daea33fedc81db">
         <title>MyClicks Store</title>
       </head>
       <body>
@@ -52,16 +38,16 @@ def home():
 # === Redirect Page Template ===
 page_template = """
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-  <meta charset=\"UTF-8\">
-  <meta http-equiv=\"refresh\" content=\"{{ delay }};url={{ target }}\">
-  <meta name=\"monetag\" content=\"28d87cfad14ca2c792a76293e20949f6\">
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="{{ delay }};url={{ target }}">
+  <meta name="mylead-verification" content="1d7532e80fc65619c5daea33fedc81db">
   <title>Redirecting...</title>
 </head>
 <body>
   {{ ad_code|safe }}
-  <p style=\"text-align:center;margin-top:20px;\">You will be redirected in {{ delay }} seconds...</p>
+  <p style="text-align:center;margin-top:20px;">You will be redirected in {{ delay }} seconds...</p>
 </body>
 </html>
 """
